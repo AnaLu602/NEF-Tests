@@ -1,5 +1,3 @@
-
-
 #Report API
 
 REPORT_API_IP=10.0.12.168
@@ -11,3 +9,6 @@ REPORT_FILE_NAME=test.json
 
 NEF_IP=10.0.12.95
 NEF_PORT=8888
+
+EMAIL=admin@my-email.com
+PASS=pass

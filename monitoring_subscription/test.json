@@ -1,0 +1,174 @@
+{
+    "requests": [
+        {
+            "id": 0,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 200,
+                "result": {
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzEyNDgsInN1YiI6IjEifQ.8YdxSFaAmYIX2lf-z_RgfZ4XVBb9CMh1vJYOa48edhw",
+                    "token_type": "bearer"
+                }
+            }
+        },
+        {
+            "id": 1,
+            "details": {
+                "endpoint": "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions",
+                "method": "POST",
+                "payload": {
+                    "externalId": "123456789@domain.com",
+                    "notificationDestination": "http://localhost:80/api/v1/utils/monitoring/callback",
+                    "monitoringType": "LOCATION_REPORTING",
+                    "maximumNumberOfReports": "str",
+                    "monitorExpireTime": "2023-03-09T13:18:19.495Z",
+                    "maximumDetectionTime": 1,
+                    "reachabilityType": "DATA"
+                }
+            },
+            "response": {
+                "code": 400,
+                "reason": "Error=(payload_location=body/maximumNumberOfReports, message='value is not a valid integer')"
+            }
+        },
+        {
+            "id": 2,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 400,
+                "reason": "Incorrect email or password"
+            }
+        },
+        {
+            "id": 3,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 200,
+                "result": {
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzE1MjIsInN1YiI6IjEifQ.VZidj3ST4w3sQmLpu7w36TXz5-44nVmPca1lUGDxKoc",
+                    "token_type": "bearer"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "details": {
+                "endpoint": "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions",
+                "method": "POST",
+                "scsAsId": "netapp",
+                "payload": {
+                    "externalId": "123456789@domain.com",
+                    "notificationDestination": "http://localhost:80/api/v1/utils/monitoring/callback",
+                    "monitoringType": "LOCATION_REPORTING",
+                    "maximumNumberOfReports": 1,
+                    "monitorExpireTime": "2023-03-09T13:18:19.495000+00:00",
+                    "maximumDetectionTime": 1,
+                    "reachabilityType": "DATA"
+                }
+            },
+            "response": {
+                "code": 200,
+                "reason": "ok"
+            }
+        },
+        {
+            "id": 5,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 200,
+                "result": {
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzE2MjEsInN1YiI6IjEifQ.cSUCO0X4I6ShPKHlYDWoSjOxYBTdB7Azc5GNqiDa1a8",
+                    "token_type": "bearer"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "details": {
+                "endpoint": "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions",
+                "method": "POST",
+                "scsAsId": "netapp",
+                "payload": {
+                    "externalId": "123456789@domain.com",
+                    "notificationDestination": "http://localhost:80/api/v1/utils/monitoring/callback",
+                    "monitoringType": "LOCATION_REPORTING",
+                    "maximumNumberOfReports": 1,
+                    "monitorExpireTime": "2023-03-09T13:18:19.495000+00:00",
+                    "maximumDetectionTime": 1,
+                    "reachabilityType": "DATA"
+                }
+            },
+            "response": {
+                "code": 200,
+                "reason": "ok"
+            }
+        },
+        {
+            "id": 7,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 400,
+                "reason": "Incorrect email or password"
+            }
+        },
+        {
+            "id": 8,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 200,
+                "result": {
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzE5MDcsInN1YiI6IjEifQ.QzFtJkn_bDWafYxTPvKlwW87a1_4tEkUaRIbcnSAZ-0",
+                    "token_type": "bearer"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 400,
+                "reason": "Incorrect email or password"
+            }
+        },
+        {
+            "id": 10,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 400,
+                "reason": "Incorrect email or password"
+            }
+        }
+    ]
+}
