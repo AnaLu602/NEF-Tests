@@ -1,0 +1,19 @@
+{
+    "requests": [
+        {
+            "id": 0,
+            "details": {
+                "endpoint": "/api/v1/login/access-token",
+                "method": "POST",
+                "payload": ""
+            },
+            "response": {
+                "code": 200,
+                "result": {
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzk0MDczNzUsInN1YiI6IjEifQ.nHWMvN3h1CuXlLxQapYAkOffJggoi3oOyYx6jSib0k4",
+                    "token_type": "bearer"
+                }
+            }
+        }
+    ]
+}
