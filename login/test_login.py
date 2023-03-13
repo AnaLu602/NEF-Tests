@@ -34,48 +34,27 @@ def create_report():
 def delete_report():
     report_api_url = report_api_base_url + "/report/"
 
-    requests.delete(report_api_url, params={"filename":REPORT_FILE_NAME})
-
-def get_token(url, user_pass):
-    
-    try:
-        headers = CaseInsensitiveDict()
-        headers["accept"] = "application/json"
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        data = {
-            "grant_type": "",
-            "username": user_pass["username"],
-            "password": user_pass["password"],
-            "scope": "",
-            "client_id": "",
-            "client_secret": ""
-        }
-
-        resp = requests.post(url, headers=headers, data=data)
-
-        resp_content = resp.json()
-
-        token = resp_content["access_token"]
-
-        return token
-    
-    except Exception as e:
-        print(f"An error occured. Exception {e}")
-        return 3, f"An error occured. Exception {e}"
-    
+    requests.delete(report_api_url, params={"filename":REPORT_FILE_NAME})    
 
 def test_login():
 
     try:
         nef_base_url = f"http://{str(NEF_IP)}:{str(NEF_PORT)}"
 
-        user_pass = {
+        headers = CaseInsensitiveDict()
+        headers["accept"] = "application/json"
+        headers["Content-Type"] = "application/x-www-form-urlencoded"
+
+        data = {
+            "grant_type": "",
             "username": USERNAME,
-            "password": PASSWORD
+            "password": PASSWORD,
+            "scope": "",
+            "client_id": "",
+            "client_secret": ""
         }
 
-        key = get_token(nef_base_url+"/api/v1/login/access-token", user_pass)
+        resp = requests.post(nef_base_url+"/api/v1/login/access-token", headers=headers, data=data)
 
         report_api_url = report_api_base_url + "/report/"
 
@@ -90,11 +69,11 @@ def test_login():
         with open(REPORT_FILE_NAME, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=4)
 
-        if report["requests"][1]["response"]["code"] != 200:
-            print(f"Test failed with status code: {report['requests'][1]['response']['code']}. "\
-                  f"Reason: {report['requests'][1]['response']['reason']}")
-            return 2, f"Test failed with status code: {report['requests'][1]['response']['code']}. "\
-                  f"Reason: {report['requests'][1]['response']['reason']}"
+        if report["requests"][0]["response"]["code"] != 200:
+            print(f"Test failed with status code: {report['requests'][0]['response']['code']}. "\
+                  f"Reason: {report['requests'][0]['response']['reason']}")
+            return 2, f"Test failed with status code: {report['requests'][0]['response']['code']}. "\
+                  f"Reason: {report['requests'][0]['response']['reason']}"
         else:
             print("Successful test")
             return 0, f"Successful test"
