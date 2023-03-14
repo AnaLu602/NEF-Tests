@@ -92,5 +92,5 @@ def test_nfv_port_security(deployment_info_file_path):
     return 1, "NOT all ports have port security enabled! "\
         f"Ports: {insecure_ports}"
  
-if __name__ == '__main__':
-    test_nfv_port_security("netapp_instantiation_information_with_port_security_enabled.json")
+# if __name__ == '__main__':
+#     test_nfv_port_security("netapp_instantiation_information_with_port_security_enabled.json")
