@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.7.16 on linux)" generated="20230314 16:30:41.242" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Nfv Port Security" source="/home/analu/Documents/NEF-Tests/port_security/test_nfv_port_security.robot">
+<test id="s1-t1" name="Testing the port security of VNF interfaces" line="6">
+<kw name="Test Nfv Port Security" library="nfvPortSecurity">
+<var>${openstack_port_security_status}</var>
+<arg>%{openstack_port_security_deployment_info_file_path=NONE}</arg>
+<msg timestamp="20230314 16:30:41.264" level="INFO">NOT all ports have port security enabled! Ports: [{'vnf_id': 'b1b379b6-2dda-40e9-8c1d-8908331b187c', 'interface_id': 'c8f9f8f5-3e67-4870-8570-e7e46e9d7b73', 'ip_adress': '10.0.30.108', 'port_security': 'false'}]</msg>
+<msg timestamp="20230314 16:30:41.264" level="INFO">${openstack_port_security_status} = (1, "NOT all ports have port security enabled! Ports: [{'vnf_id': 'b1b379b6-2dda-40e9-8c1d-8908331b187c', 'interface_id': 'c8f9f8f5-3e67-4870-8570-e7e46e9d7b73', 'ip_adress': '10.0.30.108', 'port_secu...</msg>
+<status status="PASS" starttime="20230314 16:30:41.263" endtime="20230314 16:30:41.264"/>
+</kw>
+<if>
+<branch type="IF" condition="'${openstack_port_security_status[0]}' == '0'">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>\nSuccess</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20230314 16:30:41.265" endtime="20230314 16:30:41.265"/>
+</kw>
+<status status="NOT RUN" starttime="20230314 16:30:41.264" endtime="20230314 16:30:41.265"/>
+</branch>
+<branch type="ELSE IF" condition="'${openstack_port_security_status[0]}' in ['1', '2', '3', '4']">
+<kw name="Fail" library="BuiltIn">
+<arg>\n${openstack_port_security_status[1]}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20230314 16:30:41.266" level="FAIL">
+NOT all ports have port security enabled! Ports: [{'vnf_id': 'b1b379b6-2dda-40e9-8c1d-8908331b187c', 'interface_id': 'c8f9f8f5-3e67-4870-8570-e7e46e9d7b73', 'ip_adress': '10.0.30.108', 'port_security': 'false'}]</msg>
+<status status="FAIL" starttime="20230314 16:30:41.265" endtime="20230314 16:30:41.266"/>
+</kw>
+<status status="FAIL" starttime="20230314 16:30:41.265" endtime="20230314 16:30:41.266"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<arg>\nUnknown Error</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230314 16:30:41.266" endtime="20230314 16:30:41.266"/>
+</kw>
+<status status="NOT RUN" starttime="20230314 16:30:41.266" endtime="20230314 16:30:41.266"/>
+</branch>
+<status status="FAIL" starttime="20230314 16:30:41.264" endtime="20230314 16:30:41.266"/>
+</if>
+<timeout value="15 minutes"/>
+<status status="FAIL" starttime="20230314 16:30:41.263" endtime="20230314 16:30:41.266">
+NOT all ports have port security enabled! Ports: [{'vnf_id': 'b1b379b6-2dda-40e9-8c1d-8908331b187c', 'interface_id': 'c8f9f8f5-3e67-4870-8570-e7e46e9d7b73', 'ip_adress': '10.0.30.108', 'port_security': 'false'}]</status>
+</test>
+<status status="FAIL" starttime="20230314 16:30:41.243" endtime="20230314 16:30:41.267"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Nfv Port Security">Test Nfv Port Security</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -30,9 +30,7 @@ def test_nfv_port_security(deployment_info_file_path):
         for artifact_data in deployment_info.values():
             if "vnfd-ref" in artifact_data.keys():
 
-                vnfs_info[artifact_data["vnfd-ref"]] = {}
-
-                vnfs_info[artifact_data["vnfd-ref"]]["vnfd-id"] = artifact_data["vnfd-id"]
+                vnfs_info[artifact_data["id"]] = {}
 
     except Exception as e:
         print(f"Impossible to load all deployed VNFs. Exception {e}!")
@@ -41,9 +39,9 @@ def test_nfv_port_security(deployment_info_file_path):
     result = {}
     try:
         for vnf_data in deployment_info.values():
-            if "vnfd-ref" in vnf_data.keys() and vnf_data["vnfd-ref"] in vnfs_info.keys():
+            if "id" in vnf_data.keys() and vnf_data["id"] in vnfs_info.keys():
 
-                result[vnf_data["vnfd-ref"]] = {}
+                result[vnf_data["id"]] = {}
 
                 for vdur in vnf_data["vdur"]:
                     for vim_info in vdur["vim_info"].values():
@@ -57,8 +55,8 @@ def test_nfv_port_security(deployment_info_file_path):
                             ip_address = interface["ip_address"]
                             vim_interface_id = interface["vim_interface_id"]
 
-                            result[vnf_data["vnfd-ref"]][vim_interface_id] = {
-                                        "vnfd-id": vnf_data["vnfd-id"],
+                            result[vnf_data["id"]][vim_interface_id] = {
+                                        "vnf-id": vnf_data["id"],
                                         "port_security": port_security,
                                         "ip_adress": ip_address
                                     }
@@ -77,7 +75,7 @@ def test_nfv_port_security(deployment_info_file_path):
         for vim_interface_id in result[vnfd]:
             if result[vnfd][vim_interface_id]["port_security"] == "false":
                 insecure_ports.append({
-                    "vnfd_id": result[vnfd][vim_interface_id]["vnfd-id"],
+                    "vnf_id": result[vnfd][vim_interface_id]["vnf-id"],
                     "interface_id": vim_interface_id,
                     "ip_adress": result[vnfd][vim_interface_id]["ip_adress"],
                     "port_security": result[vnfd][vim_interface_id]["port_security"]
@@ -92,5 +90,5 @@ def test_nfv_port_security(deployment_info_file_path):
     return 1, "NOT all ports have port security enabled! "\
         f"Ports: {insecure_ports}"
  
-# if __name__ == '__main__':
-#     test_nfv_port_security("netapp_instantiation_information_with_port_security_enabled.json")
+if __name__ == '__main__':
+    test_nfv_port_security("netapp_instantiation_information_with_port_security_enabled.json")
