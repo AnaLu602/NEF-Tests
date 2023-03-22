@@ -8,11 +8,8 @@
                 "payload": ""
             },
             "response": {
-                "code": 200,
-                "result": {
-                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzk0MDgzNzQsInN1YiI6IjEifQ.lzNhnM3QYN617LVmXOTkOcT7u7CrNewGzu0OroNihto",
-                    "token_type": "bearer"
-                }
+                "code": 400,
+                "reason": "Incorrect email or password"
             }
         }
     ]
