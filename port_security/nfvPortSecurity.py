@@ -8,10 +8,17 @@
 
 import json
 import re
+import os
 
 def test_nfv_port_security(deployment_info_file_path):
 
     deployment_info = None
+
+    if deployment_info_file_path == "NONE":
+        deployment_info_file_path = os.path.join(
+            "/var", "lib", "jenkins", "test_artifacts", os.getenv("JOB_NAME"),
+            "deployment-info.json"
+        )
 
     # Load deployment info file
     try:
