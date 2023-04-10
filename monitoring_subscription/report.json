@@ -1,0 +1,40 @@
+[
+    {
+        "id": 2,
+        "endpoint": "/api/v1/login/access-token",
+        "method": "POST",
+        "request_body": {},
+        "scsAsId": null,
+        "afId": null,
+        "subscriptionId": null,
+        "transactionId": null,
+        "configurationId": null,
+        "provisioningId": null,
+        "setId": null,
+        "nef_response_code": 200,
+        "nef_response_message": "{'access_token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODE4MzM0MzYsInN1YiI6IjEifQ.ZbWT0RgLct0vbWdRzFSrJbX8BBGOHDOdVUA0UxYxi0w','token_type':'bearer'}"
+    },
+    {
+        "id": 3,
+        "endpoint": "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions",
+        "method": "POST",
+        "request_body": {
+            "externalId": "10001@domain.com",
+            "notificationDestination": "http://localhost:80/api/v1/utils/monitoring/callback",
+            "monitoringType": "LOCATION_REPORTING",
+            "maximumNumberOfReports": 1,
+            "monitorExpireTime": "2023-03-09T13:18:19.495000+00:00",
+            "maximumDetectionTime": 1,
+            "reachabilityType": "DATA"
+        },
+        "scsAsId": null,
+        "afId": null,
+        "subscriptionId": null,
+        "transactionId": null,
+        "configurationId": null,
+        "provisioningId": null,
+        "setId": null,
+        "nef_response_code": 200,
+        "nef_response_message": "{'monitoringType':'LOCATION_REPORTING','externalId':'10001@domain.com','ipv4Addr':'10.0.0.1','locationInfo':{'cellId':null,'gNBId':null}}"
+    }
+]

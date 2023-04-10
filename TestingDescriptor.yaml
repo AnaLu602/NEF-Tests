@@ -1,0 +1,92 @@
+test_info:
+  netapp_id: YoGoKo-CITS-NetApp
+  network_service_id: CITS
+  testbed_id: testbed_itav 
+  description: Validation tests for CITS-NetApp
+
+test_phases:
+  setup:
+    deployments:
+      - deployment_id: 1
+        name: xyz_d1
+        descriptor: xyz_vnf1_vnfd
+        id: none 
+        parameters: 
+          - key: ip_dest
+            value: 1.1.1.1 
+      - deployment_id: 2
+        name: xyz_vnf2
+        descriptor: xyz_vnf2_vnfd
+        id: none 
+        parameters:
+          - key: ip_source 
+            value: 2.2.2.2
+
+    testcases:
+    
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               Openstack Port Security               #
+      #######################################################
+
+      - testcase_id: 1
+        type: developer-defined
+        scope: security
+        name: port_security
+        description: Test Port Security
+        parameters:
+          - key: xxx
+            value: yyy
+
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 2
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 3
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+
+
+
+  execution:
+    - batch_id: 1
+      scope: security
+      executions:
+      - execution_id: 1
+        name: security_tests
+        testcase_ids: [1]
+    #- batch_id: 2
+    #  scope: operational
+    #  executions:
+    #  - execution_id: 1
+    #    name: operational
+    #    testcase_ids: [6]
