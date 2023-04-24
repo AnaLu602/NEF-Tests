@@ -46,11 +46,11 @@ def test_login(report_api_ip, report_api_port, report_name, mini_api_ip, mini_ap
             "nef_pass": nef_pass
         }
 
-        response = requests.post(mini_api_url, data=data)
+        response = requests.post(mini_api_url, params=data)
 
         if response.status_code != 200:
             print(f"Error while calling the MiniAPI")
-            raise Exception(f"Error while calling the MiniAPI")
+            raise Exception(f"Error while calling the MiniAPI, {response}")
 
         # 4. Get Report
 

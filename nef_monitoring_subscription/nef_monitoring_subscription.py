@@ -46,7 +46,7 @@ def test_nef_monitoring_subscription(report_api_ip, report_api_port, report_name
             "nef_pass": nef_pass
         }
 
-        response = requests.post(mini_api_url, data=data)
+        response = requests.post(mini_api_url, params=data)
 
         if response.status_code != 200:
             print(f"Error while calling the MiniAPI")
