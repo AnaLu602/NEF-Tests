@@ -21,7 +21,7 @@ def test_nef_monitoring_subscription(report_api_ip, report_api_port, report_name
 
         response = requests.delete(report_api_url)
 
-        if response.status_code != 200 or response.status_code != 404:
+        if not (response.status_code == 200 or response.status_code == 404):
             print(f"Error deleting the report")
             raise Exception(f"Error deleting the report")
 
