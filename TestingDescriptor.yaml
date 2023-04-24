@@ -56,6 +56,18 @@ test_phases:
             value: 3000
           - key: report_name
             value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
 
       #######################################################
       #                   Pre-Defined Test                  #
@@ -74,8 +86,18 @@ test_phases:
             value: 3000
           - key: report_name
             value: report.json
-
-
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
 
   execution:
     - batch_id: 1

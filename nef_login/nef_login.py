@@ -11,11 +11,48 @@ import requests
 import json
   
 
-def test_login(report_api_ip, report_api_port, report_name):
+def test_login(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
 
     try:
 
         report_api_url = f"http://{report_api_ip}:{report_api_port}" + "/report/"
+
+        # 1. Delete any existing report
+
+        response = requests.delete(report_api_url)
+
+        if response.status_code != 200 or response.status_code != 404:
+            print(f"Error deleting the report")
+            raise Exception(f"Error deleting the report")
+
+        # 2. Create Report
+
+        response = requests.post(report_api_url)
+
+        if response.status_code == 409:
+            print(f"Report cound't be created")
+            raise Exception(f"Report cound't be created")
+        
+        # 3. Call the MiniAPI to run the code
+
+        mini_api_url = f"http://{mini_api_ip}:{mini_api_port}" + "/start/"
+
+        data = {
+            "configId": 1,
+            "duration": 10,
+            "nef_ip": nef_ip,
+            "nef_port": nef_port,
+            "nef_username": nef_user,
+            "nef_pass": nef_pass
+        }
+
+        response = requests.post(mini_api_url, data=data)
+
+        if response.status_code != 200:
+            print(f"Error while calling the MiniAPI")
+            raise Exception(f"Error while calling the MiniAPI")
+
+        # 4. Get Report
 
         response = requests.get(report_api_url)
 
@@ -28,6 +65,7 @@ def test_login(report_api_ip, report_api_port, report_name):
         with open(report_name, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=4)
 
+        # 5. Validate the Report
 
         if report[0]["endpoint"] != "/api/v1/login/access-token":
             print(f"Test failed. Wrong endpoint used: {report[0]['endpoint']}.")
