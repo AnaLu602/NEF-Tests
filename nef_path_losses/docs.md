@@ -33,7 +33,7 @@ Example:
 ==============================================================================
 Test Nef Path Losses                                                          
 ==============================================================================
-Testing the RSRP information                                          | PASS |
+Testing the Path Losses Information                                   | PASS |
 Successful test
 ------------------------------------------------------------------------------
 Test Nef Path Losses                                                  | PASS |
