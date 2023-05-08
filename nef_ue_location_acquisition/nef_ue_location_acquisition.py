@@ -11,7 +11,7 @@ import requests
 import json
   
 
-def test_nef_eu_location_acquisition(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
+def test_nef_ue_location_acquisition(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
 
     try:
 
@@ -67,20 +67,20 @@ def test_nef_eu_location_acquisition(report_api_ip, report_api_port, report_name
 
         # 5. Validate the Report
 
-        if report[3]["endpoint"] != "/api/v1/UEs":
-            print(f"Test failed. Wrong endpoint used: {report[3]['endpoint']}. The endpoint should be: '/api/v1/UEs' ")
-            return 1, f"Test failed. Wrong endpoint used: {report[3]['endpoint']}. The endpoint should be: '/api/v1/UEs' "
+        if report[2]["endpoint"] != "/api/v1/UEs":
+            print(f"Test failed. Wrong endpoint used: {report[2]['endpoint']}. The endpoint should be: '/api/v1/UEs' ")
+            return 1, f"Test failed. Wrong endpoint used: {report[2]['endpoint']}. The endpoint should be: '/api/v1/UEs' "
         
-        elif report[3]["method"] != "GET":
-            print(f"Test failed. Wrong method used: {report[3]['method']}. It should be a GET.")
-            return 2, f"Test failed. Wrong method used: {report[3]['method']}. It should be a GET."
+        elif report[2]["method"] != "GET":
+            print(f"Test failed. Wrong method used: {report[2]['method']}. It should be a GET.")
+            return 2, f"Test failed. Wrong method used: {report[2]['method']}. It should be a GET."
 
 
-        elif report[3]["nef_response_code"] != 200:
-            print(f"Test failed with status code: {report[3]['nef_response_code']}. "\
-                  f"Reason: {report[3]['nef_response_message']}")
-            return 3, f"Test failed with status code: {report[3]['nef_response_code']}. "\
-                  f"Reason: {report[3]['nef_response_message']}"
+        elif report[2]["nef_response_code"] != 200:
+            print(f"Test failed with status code: {report[2]['nef_response_code']}. "\
+                  f"Reason: {report[2]['nef_response_message']}")
+            return 3, f"Test failed with status code: {report[2]['nef_response_code']}. "\
+                  f"Reason: {report[2]['nef_response_message']}"
         else:
             print("Successful test")
             return 0, f"Successful test"
