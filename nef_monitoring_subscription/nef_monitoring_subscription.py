@@ -68,12 +68,12 @@ def test_nef_monitoring_subscription(report_api_ip, report_api_port, report_name
         # 5. Validate the Report
 
         if report[1]["endpoint"] != "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions":
-            print(f"Test failed. Wrong endpoint used: {report[1]['endpoint']}.")
-            return 1, f"Test failed. Wrong endpoint used: {report[1]['endpoint']}."
+            print(f"Test failed. Wrong endpoint used: {report[1]['endpoint']}. The endpoint should be: '/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions'")
+            return 1, f"Test failed. Wrong endpoint used: {report[1]['endpoint']}. The endpoint should be: '/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions'"
         
         elif report[1]["method"] != "POST":
-            print(f"Test failed. Wrong method used: {report[1]['method']}.")
-            return 2, f"Test failed. Wrong method used:{report[1]['method']}."
+            print(f"Test failed. Wrong method used: {report[1]['method']}. It should be a POST.")
+            return 2, f"Test failed. Wrong method used:{report[1]['method']}. It should be a POST."
 
 
         elif report[1]["nef_response_code"] != 200:

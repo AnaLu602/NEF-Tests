@@ -68,12 +68,12 @@ def test_login(report_api_ip, report_api_port, report_name, mini_api_ip, mini_ap
         # 5. Validate the Report
 
         if report[0]["endpoint"] != "/api/v1/login/access-token":
-            print(f"Test failed. Wrong endpoint used: {report[0]['endpoint']}.")
-            return 1, f"Test failed. Wrong endpoint used: {report[0]['endpoint']}."
+            print(f"Test failed. Wrong endpoint used: {report[0]['endpoint']}. The endpoint should be: '/api/v1/login/access-token'")
+            return 1, f"Test failed. Wrong endpoint used: {report[0]['endpoint']}. The endpoint should be: '/api/v1/login/access-token'"
         
         elif report[0]["method"] != "POST":
-            print(f"Test failed. Wrong method used: {report[0]['method']}.")
-            return 2, f"Test failed. Wrong method used:{report[0]['method']}."
+            print(f"Test failed. Wrong method used: {report[0]['method']}. It should be a POST.")
+            return 2, f"Test failed. Wrong method used:{report[0]['method']}. It should be a POST."
 
 
         elif report[0]["nef_response_code"] != 200:
