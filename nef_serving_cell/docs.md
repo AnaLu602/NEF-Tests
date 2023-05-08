@@ -1,4 +1,4 @@
-# NEF Serving Cell Information
+# Serving Cell Information Test
 
 ## 1. Test Goals
 
@@ -10,7 +10,7 @@ This test verifies if a VNF is able to get the serving cell information.
 
 ## 3. Inputs
 
-The NEF UE Location Acquisition takes as an input:
+The Serving Cell Information Test takes as an input:
 
 Example:
 - `export nef_serving_cell_report_api_ip=10.255.28.238`

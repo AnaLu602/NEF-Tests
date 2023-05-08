@@ -4,7 +4,7 @@
 # 0 - OK
 # 1 - Wrong endpoint
 # 2 - Wrong method
-# 3 - Couldn't get the Path Losses Information
+# 3 - Couldn't do a QoS Subscription
 # 4 - Other
 
 import requests

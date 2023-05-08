@@ -13,14 +13,15 @@ This test requires a json file containing information on the monitoring subscrip
 The Monitoring Subscription Test takes as an input:
 
 Example:
-- `export report_api_ip=10.0.12.168`
-- `export report_api_port=8000`
-- `export report_api_filename=test.json`
-- `export nef_ip=10.0.12.95`
-- `export nef_port=8888`
-- `export nef_username=admin@my-email.com`
-- `export nef_password=pass`
-- `export monitoring_payload_path=monitoring_payload.json`
+- `export nef_monitoring_subscription_report_api_ip=10.255.28.238`
+- `export nef_monitoring_subscription_report_api_port=3000`
+- `export nef_monitoring_subscription_report_name=report.json`
+- `export nef_monitoring_subscription_mini_api_ip=10.255.28.163`
+- `export nef_monitoring_subscription_mini_api_port=3001`
+- `export nef_monitoring_subscription_nef_ip=10.255.28.238`
+- `export nef_monitoring_subscription_nef_port=8888`
+- `export nef_monitoring_subscription_nef_user=admin@my-email.com`
+- `export nef_monitoring_subscription_nef_pass=pass`
 
 ## 4. Outputs
 

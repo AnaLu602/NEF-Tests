@@ -1,4 +1,4 @@
-# NEF RSRP
+# RSRP Test
 
 ## 1. Test Goals
 
@@ -10,7 +10,7 @@ This test verifies if a VNF is able to get the RSRP.
 
 ## 3. Inputs
 
-The NEF UE Location Acquisition takes as an input:
+The RSRP Test takes as an input:
 
 Example:
 - `export nef_rsrp_report_api_ip=10.255.28.238`

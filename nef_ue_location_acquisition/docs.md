@@ -1,4 +1,4 @@
-# NEF UE Location Acquisition
+# UE Location Acquisition Test
 
 ## 1. Test Goals
 
@@ -10,7 +10,7 @@ This test verifies if a VNF is able to get a UE location.
 
 ## 3. Inputs
 
-The NEF UE Location Acquisition takes as an input:
+The UE Location Acquisition Test takes as an input:
 
 Example:
 - `export nef_ue_location_acquisition_report_api_ip=10.255.28.238`

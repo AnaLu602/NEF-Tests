@@ -1,4 +1,4 @@
-# NEF Path Losses
+# Path Losses Test
 
 ## 1. Test Goals
 
@@ -10,7 +10,7 @@ This test verifies if a VNF is able to get the path losses.
 
 ## 3. Inputs
 
-The NEF UE Location Acquisition takes as an input:
+The Path Losses Test takes as an input:
 
 Example:
 - `export nef_path_losses_report_api_ip=10.255.28.238`
