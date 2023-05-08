@@ -1,12 +1,12 @@
-# NEF Serving Cell Information
+# NEF RSRP
 
 ## 1. Test Goals
 
-This test will validate that a Network Application is able to retrieve indicative information about the serving radio node (cell). In this test, a NEF Emulator is used.
+This test will validate that a Network Application is able to retrieve indicative information about RSRP (Reference Signal Received Power). In this test, a NEF Emulator is used.
 
 ## 2. Test Description
 
-This test verifies if a VNF is able to get the serving cell information.
+This test verifies if a VNF is able to get the RSRP.
 
 ## 3. Inputs
 
