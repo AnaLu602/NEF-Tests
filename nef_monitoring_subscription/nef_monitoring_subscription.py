@@ -1,14 +1,24 @@
 
 
 # Return Codes:
-# 0 - OK
-# 1 - Test failed, wrong endpoint used
-# 2 - Test failed, wrong method used
-# 3 - Test failed
-# 4 - Other
+# 0 - Successful test
+# 1 - Test Failed due to errors in creating a monitoring subscription
+# 2 - Test Failed due to an exception
 
 import requests
 import json
+
+def validate_report(report):
+    errors = []
+    for request in report:
+        if request["endpoint"] == "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions":
+            if request["method"] != "POST":
+                errors.append("Wrong method used.")
+                break
+            elif request["nef_response_code"] not in [200, 409]:
+                errors.append(f"Unable to create a monitoring subscription due to: {request['nef_response_message']}")
+                break
+    return errors
 
 
 def test_nef_monitoring_subscription(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
@@ -65,27 +75,20 @@ def test_nef_monitoring_subscription(report_api_ip, report_api_port, report_name
         with open(report_name, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=4)
 
-        # 5. Validate the Report
-
-        if report[1]["endpoint"] != "/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions":
-            print(f"Test failed. Wrong endpoint used: {report[1]['endpoint']}. The endpoint should be: '/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions'")
-            return 1, f"Test failed. Wrong endpoint used: {report[1]['endpoint']}. The endpoint should be: '/nef/api/v1/3gpp-monitoring-event/v1/netapp/subscriptions'"
-        
-        elif report[1]["method"] != "POST":
-            print(f"Test failed. Wrong method used: {report[1]['method']}. It should be a POST.")
-            return 2, f"Test failed. Wrong method used:{report[1]['method']}. It should be a POST."
-
-
-        elif report[1]["nef_response_code"] != 200:
-            print(f"Test failed with status code: {report[1]['nef_response_code']}. "\
-                  f"Reason: {report[1]['nef_response_message']}")
-            return 3, f"Test failed with status code: {report[1]['nef_response_code']}. "\
-                  f"Reason: {report[1]['nef_response_message']}"
-        else:
-            print("Successful test")
-            return 0, f"Successful test"
-
     except Exception as e:
-        print(f"An error occured. Exception {e}")
-        return 3, f"An error occured. Exception {e}"
+            print(f"An error occured. Exception {e}")
+            return 2, f"An error occured. Exception {e}"
+
+    # 5. Validate the Report
+    
+    errors = validate_report(report)
+
+    if len(errors) != 0:
+        errors_str = '\n\t- '.join(errors)
+        print(f"Test Failed due to the following errors: {errors_str}")
+        return 1, f"Test Failed due to the following errors: {errors_str}"
+
+    else:
+        print("Successful test.")
+        return 0, f"Successful test."
     

@@ -1,26 +1,25 @@
-
-
 # Return Codes:
 # 0 - Successful test
-# 1 - Test Failed due to errors in obtaining the information
+# 1 - Test Failed due to errors in getting handovers
 # 2 - Test Failed due to an exception
 
 import requests
 import json
 
-def validate_report(report):
+def validate_report(report, nef_supi):
     errors = []
     for request in report:
-        if request["endpoint"] == "/api/v1/UEs":
+        if request["endpoint"] == f"/test/api/v1/UEs/{nef_supi}/handovers":
             if request["method"] != "GET":
                 errors.append("Wrong method used.")
                 break
             elif request["nef_response_code"] not in [200, 409]:
-                errors.append(f"Unable to get UE information due to: {request['nef_response_message']}")
+                errors.append(f"Unable to get handovers due to: {request['nef_response_message']}")
                 break
     return errors
+  
 
-def test_nef_ue_location_acquisition(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
+def test_nef_handovers(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass, nef_supi):
 
     try:
 
@@ -80,7 +79,7 @@ def test_nef_ue_location_acquisition(report_api_ip, report_api_port, report_name
 
     # 5. Validate the Report
     
-    errors = validate_report(report)
+    errors = validate_report(report, nef_supi)
 
     if len(errors) != 0:
         errors_str = '\n\t- '.join(errors)

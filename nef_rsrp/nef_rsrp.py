@@ -1,14 +1,24 @@
 
 
 # Return Codes:
-# 0 - OK
-# 1 - Wrong endpoint
-# 2 - Wrong method
-# 3 - Couldn't get RSRP information
-# 4 - Other
+# 0 - Successful test
+# 1 - Test Failed due to errors in getting RSRP information
+# 2 - Test Failed due to an exception
 
 import requests
 import json
+
+def validate_report(report, nef_supi):
+    errors = []
+    for request in report:
+        if request["endpoint"] == f"/test/api/v1/UEs/{nef_supi}/rsrps":
+            if request["method"] != "GET":
+                errors.append("Wrong method used.")
+                break
+            elif request["nef_response_code"] not in [200, 409]:
+                errors.append(f"Unable to get RSRP information due to: {request['nef_response_message']}")
+                break
+    return errors
   
 
 def test_nef_rsrp(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass, nef_supi):
@@ -64,27 +74,20 @@ def test_nef_rsrp(report_api_ip, report_api_port, report_name, mini_api_ip, mini
 
         with open(report_name, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=4)
-
-        # 5. Validate the Report
-
-        if report[4]["endpoint"] != f"/api/v1/UEs/{nef_supi}/rsrps":
-            print(f"Test failed. Wrong endpoint used: {report[4]['endpoint']}. The endpoint should be: '/api/v1/UEs/{nef_supi}/rsrps' ")
-            return 1, f"Test failed. Wrong endpoint used: {report[4]['endpoint']}. The endpoint should be: '/api/v1/UEs/{nef_supi}/rsrps' "
-        
-        elif report[4]["method"] != "GET":
-            print(f"Test failed. Wrong method used: {report[4]['method']}. It should be a GET.")
-            return 2, f"Test failed. Wrong method used: {report[4]['method']}. It should be a GET."
-
-
-        elif report[4]["nef_response_code"] != 200:
-            print(f"Test failed with status code: {report[4]['nef_response_code']}. "\
-                  f"Reason: {report[4]['nef_response_message']}")
-            return 3, f"Test failed with status code: {report[4]['nef_response_code']}. "\
-                  f"Reason: {report[4]['nef_response_message']}"
-        else:
-            print("Successful test")
-            return 0, f"Successful test"
-
+    
     except Exception as e:
-        print(f"An error occured. Exception {e}")
-        return 4, f"An error occured. Exception {e}"
+            print(f"An error occured. Exception {e}")
+            return 2, f"An error occured. Exception {e}"
+
+    # 5. Validate the Report
+    
+    errors = validate_report(report, nef_supi)
+
+    if len(errors) != 0:
+        errors_str = '\n\t- '.join(errors)
+        print(f"Test Failed due to the following errors: {errors_str}")
+        return 1, f"Test Failed due to the following errors: {errors_str}"
+
+    else:
+        print("Successful test.")
+        return 0, f"Successful test."

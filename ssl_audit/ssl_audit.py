@@ -11,77 +11,50 @@ import subprocess
 import re
 
 def ssl_audit(url):
-
     try:
         cmd = ["sslyze", url]
-        response_sslyze = subprocess.run(
-            cmd, 
-            capture_output=True, 
-            text=True
-        )
-        
+        response_sslyze = subprocess.run(cmd, capture_output=True, text=True)
         stdout_lines = response_sslyze.stdout.splitlines()
-        
-        # Get the compliance report against mozilla's directives
+
+        # Find compliance info
         compliance_info = None
         for i in range(len(stdout_lines)-1, 0, -1):
             if "COMPLIANCE AGAINST MOZILLA TLS" in stdout_lines[i]:
                 compliance_info = stdout_lines[i+2:]
                 break
-        
-        # in the case there is no report
+
         if not compliance_info:
             return 3, "No audit results were gathered!"
-            
-        # clease compliance report
-        compliance_info = [
-            l.strip() for l in compliance_info 
-            if 
-                len(l)>0 
-                and "Checking results against Mozilla's" not in l
-            ]
-        
-        # 1. Check if successfull according to mozilla's directives
+
+        # Clean compliance report
+        compliance_info = [l.strip() for l in compliance_info if len(l)>0 and "Checking results against Mozilla's" not in l]
+
+        # Check if successful according to Mozilla's directives
         if re.search(rf"^{url}.* OK - Compliant.$", compliance_info[-1]):
-            return 0, f"\nResult: {compliance_info[-1]}"
-            
-        # 2. Even if not compliant with mozilla's directive, the SSL analysis 
-        # may still be successful. There is a collection of compliance rules 
-        # that can be ignored
-        compliance_errors = []
+            return 0, f"Result: {compliance_info[-1]}"
+
+        # Extract compliance errors
         ignore_compliance_errors_regexes = [
             r"^\* certificate_hostname_validation:.*"
         ]
 
-        # First, check if there was an error
-        if len(compliance_info)==1\
-        and re.search(rf"^{url}.* ERROR -.*", compliance_info[0]):
-            compliance_errors.append(compliance_info[0])
-        else:
-            for i in range(1, len(compliance_info)):
-                match_ignore_rule = False
-                for ignore_regex in ignore_compliance_errors_regexes:
-                    if re.search(ignore_regex, compliance_info[i]):
-                        match_ignore_rule = True
-                        break
-                if not match_ignore_rule:
-                    compliance_errors.append(compliance_info[i][2:])
+        compliance_errors = []
+        for line in compliance_info[1:]:
+            match_ignore_rule = any(re.search(ignore_regex, line) for ignore_regex in ignore_compliance_errors_regexes)
+            if not match_ignore_rule:
+                compliance_errors.append(line)
 
-        # If there are compliancy errors, even after applying the ignore rules       
-        if len(compliance_errors) != 0:
-            error_str = f"RESULT: {compliance_info[0]}"
-            error_str += "\nERRORS:"
+        if len(compliance_errors) > 0:
+            error_str = f"Result: {compliance_info[1]}\nERRORS:"
             for error in compliance_errors:
-                error_str+=(f"\n\t-> {error}")
-
-            # Print results
+                error_str += f"\n\t-> {error}"
             return 2, error_str
-        
-        # Test
-        result = compliance_info[0]\
-            .replace('Not compliant', 'Compliant with 5GASP requirements')\
-            .replace('FAILED', 'OK')
-        return 1, f"\nResult: {result}"
+
+        # Transform the result
+        result = compliance_info[1].replace('Not compliant', 'Compliant with 5GASP requirements').replace('FAILED', 'OK')
+        return 1, f"Result: {result}"
+    except subprocess.CalledProcessError as e:
+        return 4, f"An error occurred. {e}"
     except Exception as e:
-        return 4, f"An error occured. Exception {e}"
+        return 4, f"An unexpected error occurred. Exception: {e}"
     

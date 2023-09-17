@@ -46,7 +46,7 @@ Report:  /home/analu/Documents/NEF-Tests/monitoring_subscription/report.html
 ### 4.2. Example - Test Failed Due To Invalid Payload
 
 ``` 
-→ python3 -m robot test_monitoring_subscription.robot 
+→ python3 -m robot test_nef_monitoring_subscription.robot 
 ==============================================================================
 Test Monitoring Subscription                                                  
 ==============================================================================
@@ -64,7 +64,7 @@ Report:  /home/analu/Documents/NEF-Tests/monitoring_subscription/report.html
 ### 4.3. Example - Test Failed - Other Error
 
 ``` 
-→ python3 -m robot test_monitoring_subscription.robot 
+→ python3 -m robot test_nef_monitoring_subscription.robot 
 ==============================================================================
 Test Monitoring Subscription                                                  
 ==============================================================================

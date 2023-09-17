@@ -13,9 +13,15 @@ This test verifies if a VNF is authenticating correctly against the NEF. It FAIL
 The NEF Login Test takes as an input:
 
 Example:
-- `export report_api_ip=10.0.12.95`
-- `export report_api_port=3000`
-- `export report_name=report.json`
+- `export nef_login_report_api_ip=10.255.28.238`
+- `export nef_login_report_api_port=3000`
+- `export nef_login_report_name=report.json`
+- `export nef_login_mini_api_ip=10.255.28.163`
+- `export nef_login_mini_api_port=3001`
+- `export nef_login_nef_ip=10.255.28.238`
+- `export nef_login_nef_port=8888`
+- `export nef_login_nef_user=admin@my-email.com`
+- `export nef_login_nef_pass=pass`
 
 ## 4. Outputs
 
@@ -32,9 +38,9 @@ Successful test
 Test Nef Login                                                        | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
-Output:  /home/analu/Documents/NEF-Tests/login_v2/output.xml
-Log:     /home/analu/Documents/NEF-Tests/login_v2/log.html
-Report:  /home/analu/Documents/NEF-Tests/login_v2/report.html
+Output:  /home/analu/Documents/NEF-Tests/nef_login/output.xml
+Log:     /home/analu/Documents/NEF-Tests/nef_login/log.html
+Report:  /home/analu/Documents/NEF-Tests/nef_login/report.html
 ```
 
 ### 4.2. Example - Test Failed Due to Invalid Authentication
