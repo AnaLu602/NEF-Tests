@@ -53,6 +53,11 @@ test_phases:
             value: yyy
 
       
+      ###############################################################################################################################
+      #                                                             Napp 1                                                          #
+      ###############################################################################################################################
+
+
       #######################################################
       #                   Pre-Defined Test                  #
       #               NEF Authentication Test               #
@@ -82,6 +87,8 @@ test_phases:
             value: admin@my-email.com
           - key: nef_pass
             value: pass
+          - key: napp_endpoint
+            value: /start/1/1
 
       #######################################################
       #                   Pre-Defined Test                  #
@@ -112,6 +119,8 @@ test_phases:
             value: admin@my-email.com
           - key: nef_pass
             value: pass
+          - key: napp_endpoint
+            value: /start/1/2
       
       #######################################################
       #                   Pre-Defined Test                  #
@@ -142,7 +151,9 @@ test_phases:
             value: admin@my-email.com
           - key: nef_pass
             value: pass
-      
+          - key: napp_endpoint
+            value: /start/1/3
+
       #######################################################
       #                   Pre-Defined Test                  #
       #                   NEF Serving Cell                  #
@@ -174,13 +185,247 @@ test_phases:
             value: pass
           - key: nef_supi
             value: 202010000000001
+          - key: napp_endpoint
+            value: /start/1/4
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 7
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/1/5
+
+      ###############################################################################################################################
+      #                                                             Napp 2                                                          #
+      ###############################################################################################################################
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 8
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin1@my-email.com
+          - key: nef_pass
+            value: pas
+          - key: napp_endpoint
+            value: /start/2/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 9
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin1@my-email.com
+          - key: nef_pass
+            value: pas
+          - key: napp_endpoint
+            value: /start/2/2
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 10
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin1@my-email.com
+          - key: nef_pass
+            value: pas
+          - key: napp_endpoint
+            value: /start/2/3
+
+      ###############################################################################################################################
+      #                                                             Napp 3                                                          #
+      ###############################################################################################################################
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 11
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/3/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 12
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/3/2
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #              NEF UE Location Acquisition            #
+      #######################################################
+
+      - testcase_id: 13
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_ue_location_acquisition
+        description: Test if the Network Application is able to retrieve the UE location
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/3/3
 
       #######################################################
       #                   Pre-Defined Test                  #
       #                       NEF RSRP                      #
       #######################################################
 
-      - testcase_id: 7
+      - testcase_id: 14
         type: developer-defined
         scope: 5g_readiness
         name: nef_rsrp
@@ -206,13 +451,15 @@ test_phases:
             value: pass
           - key: nef_supi
             value: 202010000000001
+          - key: napp_endpoint
+            value: /start/3/4
 
       #######################################################
       #                   Pre-Defined Test                  #
       #                   NEF Path Losses                   #
       #######################################################
 
-      - testcase_id: 8
+      - testcase_id: 15
         type: developer-defined
         scope: 5g_readiness
         name: nef_path_losses
@@ -238,17 +485,55 @@ test_phases:
             value: pass
           - key: nef_supi
             value: 202010000000001
+          - key: napp_endpoint
+            value: /start/3/5
+
+      ###############################################################################################################################
+      #                                                             Napp 4                                                          #
+      ###############################################################################################################################
 
       #######################################################
       #                   Pre-Defined Test                  #
-      #                 NEF QoS Subscription                #
+      #          NEF Monitoring Subscription Test           #
       #######################################################
 
-      - testcase_id: 9
+      - testcase_id: 16
         type: developer-defined
         scope: 5g_readiness
-        name: nef_qos_subscription
-        description: Test if the Network Application is able to do a QoS Subscription
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/4/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Serving Cell                  #
+      #######################################################
+
+      - testcase_id: 17
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_service_cell
+        description: Test if the Network Application is able to retrieve the service cell information
         parameters:
           - key: report_api_ip
             value: 2.2.2.2
@@ -268,13 +553,17 @@ test_phases:
             value: admin@my-email.com
           - key: nef_pass
             value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/4/2
 
       #######################################################
       #                   Pre-Defined Test                  #
       #                   NEF Handovers                     #
       #######################################################
 
-      - testcase_id: 10
+      - testcase_id: 18
         type: developer-defined
         scope: 5g_readiness
         name: nef_handovers
@@ -300,6 +589,780 @@ test_phases:
             value: pass
           - key: nef_supi
             value: 202010000000001
+          - key: napp_endpoint
+            value: /start/4/3
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 19
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/4/4
+
+      ###############################################################################################################################
+      #                                                             Napp 5                                                          #
+      ###############################################################################################################################
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 20
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/5/1
+      
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #              NEF UE Location Acquisition            #
+      #######################################################
+
+      - testcase_id: 21
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_ue_location_acquisition
+        description: Test if the Network Application is able to retrieve the UE location
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/5/2
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Path Losses                   #
+      #######################################################
+
+      - testcase_id: 22
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_path_losses
+        description: Test if the Network Application is able to retrieve the path losses
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/5/3
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Serving Cell                  #
+      #######################################################
+
+      - testcase_id: 23
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_service_cell
+        description: Test if the Network Application is able to retrieve the service cell information
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/5/4
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                       NEF RSRP                      #
+      #######################################################
+
+      - testcase_id: 24
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_rsrp
+        description: Test if the Network Application is able to retrieve the RSRP
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/5/5
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 25
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/5/6
+
+      ###############################################################################################################################
+      #                                                             Napp 6                                                          #
+      ###############################################################################################################################
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 26
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/6/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 27
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/6/2
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Handovers                     #
+      #######################################################
+
+      - testcase_id: 28
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_handovers
+        description: Test if the Network Application is able to retrieve handovers
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/6/3
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 29
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/6/4
+
+      ###############################################################################################################################
+      #                                                             Napp 7                                                          #
+      ###############################################################################################################################
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 30
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/7/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 31
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/7/2
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 32
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/7/3
+
+      ###############################################################################################################################
+      #                                                             Napp 8                                                          #
+      ###############################################################################################################################
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 33
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/8/1
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #          NEF Monitoring Subscription Test           #
+      #######################################################
+
+      - testcase_id: 34
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_monitoring_subscription
+        description: Test if the Monitoring Subscription of the Network Appllication is right
+        parameters:
+          - key: report_api_ip
+            value: 10.0.12.95
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/8/2
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Serving Cell                  #
+      #######################################################
+
+      - testcase_id: 35
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_service_cell
+        description: Test if the Network Application is able to retrieve the service cell information
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/8/3
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Handovers                     #
+      #######################################################
+
+      - testcase_id: 36
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_handovers
+        description: Test if the Network Application is able to retrieve handovers
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/8/4
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #              NEF UE Location Acquisition            #
+      #######################################################
+
+      - testcase_id: 37
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_ue_location_acquisition
+        description: Test if the Network Application is able to retrieve the UE location
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/8/5
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                   NEF Path Losses                   #
+      #######################################################
+
+      - testcase_id: 38
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_path_losses
+        description: Test if the Network Application is able to retrieve the path losses
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/8/6
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                       NEF RSRP                      #
+      #######################################################
+
+      - testcase_id: 39
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_rsrp
+        description: Test if the Network Application is able to retrieve the RSRP
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: nef_supi
+            value: 202010000000001
+          - key: napp_endpoint
+            value: /start/8/7
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #                 NEF QoS Subscription                #
+      #######################################################
+
+      - testcase_id: 40
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_qos_subscription
+        description: Test if the Network Application is able to do a QoS Subscription
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/8/8
+
+      ###############################################################################################################################
+      #                                                             Napp 9                                                          #
+      ###############################################################################################################################
+
+      #######################################################
+      #                   Pre-Defined Test                  #
+      #               NEF Authentication Test               #
+      #######################################################
+
+      - testcase_id: 41
+        type: developer-defined
+        scope: 5g_readiness
+        name: nef_login
+        description: Test if the Network Appllication can authenticate withing NEF
+        parameters:
+          - key: report_api_ip
+            value: 2.2.2.2
+          - key: report_api_port
+            value: 3000
+          - key: report_name
+            value: report.json
+          - key: mini_api_ip
+            value: 1.1.1.1
+          - key: mini_api_port
+            value: 3001
+          - key: nef_ip
+            value: 2.2.2.2
+          - key: nef_port
+            value: 8888
+          - key: nef_user
+            value: admin@my-email.com
+          - key: nef_pass
+            value: pass
+          - key: napp_endpoint
+            value: /start/9/1
 
   execution:
     - batch_id: 1

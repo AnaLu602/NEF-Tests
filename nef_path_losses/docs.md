@@ -23,6 +23,7 @@ Example:
 - `export nef_path_losses_nef_user=admin@my-email.com`
 - `export nef_path_losses_nef_pass=pass`
 - `export nef_path_losses_nef_supi=202010000000001`
+- `export nef_path_losses_napp_endpoint=/start/2/1/`
 
 ## 4. Outputs
 

@@ -23,6 +23,7 @@ Example:
 - `export nef_handovers_nef_user=admin@my-email.com`
 - `export nef_handovers_nef_pass=pass`
 - `export nef_handovers_nef_supi=202010000000001`
+- `export nef_handovers_napp_endpoint=/start/2/1/`
 
 ## 4. Outputs
 

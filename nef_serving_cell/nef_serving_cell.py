@@ -21,7 +21,7 @@ def validate_report(report, nef_supi):
     return errors
   
 
-def test_nef_serving_cell(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass, nef_supi):
+def test_nef_serving_cell(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass, nef_supi, napp_endpoint):
 
     try:
 
@@ -45,11 +45,9 @@ def test_nef_serving_cell(report_api_ip, report_api_port, report_name, mini_api_
         
         # 3. Call the MiniAPI to run the code
 
-        mini_api_url = f"http://{mini_api_ip}:{mini_api_port}" + "/start/"
+        mini_api_url = f"http://{mini_api_ip}:{mini_api_port}" + napp_endpoint
 
         data = {
-            "configId": 1,
-            "duration": 10,
             "nef_ip": nef_ip,
             "nef_port": nef_port,
             "nef_username": nef_user,

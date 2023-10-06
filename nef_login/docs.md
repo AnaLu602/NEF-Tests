@@ -22,6 +22,7 @@ Example:
 - `export nef_login_nef_port=8888`
 - `export nef_login_nef_user=admin@my-email.com`
 - `export nef_login_nef_pass=pass`
+- `export nef_login_napp_endpoint=/start/2/1/`
 
 ## 4. Outputs
 

@@ -22,7 +22,7 @@ def validate_report(report):
   
   
 
-def test_nef_qos_subscription(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass):
+def test_nef_qos_subscription(report_api_ip, report_api_port, report_name, mini_api_ip, mini_api_port, nef_ip, nef_port, nef_user, nef_pass, napp_endpoint):
 
     try:
 
@@ -46,11 +46,9 @@ def test_nef_qos_subscription(report_api_ip, report_api_port, report_name, mini_
         
         # 3. Call the MiniAPI to run the code
 
-        mini_api_url = f"http://{mini_api_ip}:{mini_api_port}" + "/start/"
+        mini_api_url = f"http://{mini_api_ip}:{mini_api_port}" + napp_endpoint
 
         data = {
-            "configId": 1,
-            "duration": 10,
             "nef_ip": nef_ip,
             "nef_port": nef_port,
             "nef_username": nef_user,

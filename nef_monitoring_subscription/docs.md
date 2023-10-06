@@ -22,6 +22,7 @@ Example:
 - `export nef_monitoring_subscription_nef_port=8888`
 - `export nef_monitoring_subscription_nef_user=admin@my-email.com`
 - `export nef_monitoring_subscription_nef_pass=pass`
+- `export nef_monitoring_subscription_napp_endpoint=/start/2/1/`
 
 ## 4. Outputs
 
