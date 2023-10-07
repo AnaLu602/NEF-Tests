@@ -15,7 +15,7 @@ def validate_report(report):
             if request["method"] != "POST":
                 errors.append("Wrong method used.")
                 break
-            elif request["nef_response_code"] not in [200, 409]:
+            elif request["nef_response_code"] not in [200, 201, 409]:
                 errors.append(f"Unable to create a qos subscription due to: {request['nef_response_message']}")
                 break
     return errors
