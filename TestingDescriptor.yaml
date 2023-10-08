@@ -1430,7 +1430,7 @@ test_phases:
           - key: params
             value: usageThreshold-uplinkVolume
           - key: napp_endpoint
-            value: /start/9/1
+            value: /start/9/2
 
   execution:
     - batch_id: 1
