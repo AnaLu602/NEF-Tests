@@ -13,7 +13,7 @@ test_phases:
         id: none 
         parameters: 
           - key: ip_dest
-            value: 1.1.1.1 
+            value: 1.1.1.1
       - deployment_id: 2
         name: xyz_vnf2
         descriptor: xyz_vnf2_vnfd
@@ -76,7 +76,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -108,7 +108,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -140,7 +140,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -172,7 +172,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -206,7 +206,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -242,7 +242,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -274,7 +274,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -306,7 +306,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -342,7 +342,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -374,7 +374,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -406,7 +406,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -438,7 +438,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -472,7 +472,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -510,7 +510,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -542,7 +542,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -576,7 +576,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -610,7 +610,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -646,7 +646,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -678,7 +678,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -710,7 +710,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -744,7 +744,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -778,7 +778,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -812,7 +812,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -846,7 +846,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -882,7 +882,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -914,7 +914,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -946,7 +946,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -980,7 +980,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1016,7 +1016,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1048,7 +1048,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1080,7 +1080,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1116,7 +1116,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1148,7 +1148,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1180,7 +1180,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1214,7 +1214,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1248,7 +1248,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1280,7 +1280,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1314,7 +1314,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1348,7 +1348,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1384,7 +1384,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
@@ -1416,7 +1416,7 @@ test_phases:
           - key: report_name
             value: report.json
           - key: mini_api_ip
-            value: 1.1.1.1
+            value: {{deployment_info|miniapi_final-nsd|vnf1|vnf-cp0-ext|ip-address}}
           - key: mini_api_port
             value: 3001
           - key: nef_ip
