@@ -18,7 +18,7 @@ def validate_report(report, params):
                 errors.append("Wrong method used.")
                 break
             elif request["nef_response_code"] not in [200, 201 ,409]:
-                errors.append(f"Unable to get create QoS Subscription due to: {request['nef_response_message']}")
+                errors.append(f"Unable to create QoS Subscription due to: {request['nef_response_message']}")
                 break
             else:
                 msg = request['nef_response_message']
@@ -44,7 +44,7 @@ def validate_report(report, params):
                 errors.append("Wrong method used.")
                 break
             elif request["nef_response_code"] not in [200, 409]:
-                errors.append(f"Unable to get create QoS Subscription due to: {request['nef_response_message']}")
+                errors.append(f"Unable to get QoS Subscription due to: {request['nef_response_message']}")
                 break
             else:
                 msg = request['nef_response_message']
