@@ -70,7 +70,7 @@ test_phases:
         description: Test if the Network Appllication can authenticate withing NEF
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -80,7 +80,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -102,7 +102,7 @@ test_phases:
         description: Test if the Monitoring Subscription of the Network Appllication is right
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -112,7 +112,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -134,7 +134,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the UE location
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -144,7 +144,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -166,7 +166,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the service cell information
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -176,7 +176,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -200,7 +200,7 @@ test_phases:
         description: Test if the Network Application is able to do a QoS Subscription
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -210,7 +210,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -236,7 +236,7 @@ test_phases:
         description: Test if the Network Appllication can authenticate withing NEF
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -246,7 +246,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -268,7 +268,7 @@ test_phases:
         description: Test if the Monitoring Subscription of the Network Appllication is right
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -278,7 +278,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -300,7 +300,7 @@ test_phases:
         description: Test if the Network Application is able to do a QoS Subscription
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -310,7 +310,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -336,7 +336,7 @@ test_phases:
         description: Test if the Network Appllication can authenticate withing NEF
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -346,7 +346,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -368,7 +368,7 @@ test_phases:
         description: Test if the Monitoring Subscription of the Network Appllication is right
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -378,7 +378,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -400,7 +400,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the UE location
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -410,7 +410,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -432,7 +432,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the RSRP
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -442,7 +442,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -466,7 +466,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the path losses
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -476,7 +476,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -504,7 +504,7 @@ test_phases:
         description: Test if the Monitoring Subscription of the Network Appllication is right
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -514,7 +514,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
@@ -536,7 +536,7 @@ test_phases:
         description: Test if the Network Application is able to retrieve the service cell information
         parameters:
           - key: report_api_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: report_api_port
             value: 3000
           - key: report_name
@@ -546,7 +546,7 @@ test_phases:
           - key: mini_api_port
             value: 3001
           - key: nef_ip
-            value: 2.2.2.2
+            value: 10.255.28.183
           - key: nef_port
             value: 8888
           - key: nef_user
