@@ -20,7 +20,7 @@ def validate_report(report, params):
             elif request["nef_response_code"] not in [200, 201 ,409]:
                 errors.append(f"Unable to create QoS Subscription due to: {request['nef_response_message']}")
                 break
-            else:
+            elif request["nef_response_code"] in [200, 201]:
                 msg = request['nef_response_message']
                 msg = msg.replace("'", "\"")
                 json_msg = json.loads(msg)
@@ -37,6 +37,39 @@ def validate_report(report, params):
                     first_value = current_doc[last_key]
                 else:
                     first_value = json_msg[params]
+                break
+            else:
+                for req in report:
+                    if req["endpoint"] == f"/nef/api/v1/3gpp-as-session-with-qos/v1/netapp/subscriptions":
+                        if req["method"] == "GET":
+                            msg = req['nef_response_message']
+                            msg = msg.replace("'", "\"")
+                            json_msg = json.loads(msg)
+
+                            #hardcoded
+                            desired_ipv4 = '10.0.0.3'
+
+                            # Using a for loop
+                            for item in json_msg:
+                                if item['ipv4Addr'] == desired_ipv4:
+                                    json_msg = item
+                                    break
+                            
+                            link = json_msg['link']
+                            url_parts = link.split('/')
+                            subsId = url_parts[-1]
+
+                            if len(keys) > 1:
+                                current_doc = json_msg
+                                last_key = keys[-1]
+                                for key in keys[:-1]:
+                                    current_doc = current_doc[key]
+
+                                first_value = current_doc[last_key]
+                            else:
+                                first_value = json_msg[params]
+                            break
+                break
 
     for request in report:
         if request["endpoint"] == f"/nef/api/v1/3gpp-as-session-with-qos/v1/netapp/subscriptions/{subsId}":
@@ -60,6 +93,7 @@ def validate_report(report, params):
                     second_value = current_doc[last_key]
                 else:
                     second_value = json_msg[params]
+                break
     
     if first_value == second_value:
         errors.append("Parameter not updated.")
@@ -135,3 +169,5 @@ def test_nef_generate_values(report_api_ip, report_api_port, report_name, mini_a
     else:
         print("Successful test.")
         return 0, f"Successful test."
+
+test_nef_generate_values("10.255.28.183",3000,"report.json","10.255.28.173",3001,"10.255.28.183",8888,"admin@my-email.com","pass","usageThreshold-uplinkVolume","/start/9/2/")
