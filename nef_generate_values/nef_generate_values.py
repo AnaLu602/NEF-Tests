@@ -169,5 +169,3 @@ def test_nef_generate_values(report_api_ip, report_api_port, report_name, mini_a
     else:
         print("Successful test.")
         return 0, f"Successful test."
-
-test_nef_generate_values("10.255.28.183",3000,"report.json","10.255.28.173",3001,"10.255.28.183",8888,"admin@my-email.com","pass","usageThreshold-uplinkVolume","/start/9/2/")
